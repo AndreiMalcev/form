@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="election" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55e116d5-77ba-4d35-b7c9-176221abec24">
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="Data"/>
+	<queryString language="json">
+		<![CDATA[elections]]>
+	</queryString>
+	<field name="candidate" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="candidate"/>
+		<fieldDescription><![CDATA[candidate]]></fieldDescription>
+	</field>
+	<field name="biography" class="java.lang.String">
+		<property name="net.sf.jasperreports.json.field.expression" value="biography"/>
+		<fieldDescription><![CDATA[biography]]></fieldDescription>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="52" splitType="Stretch">
+			<staticText>
+				<reportElement x="-20" y="-10" width="595" height="51" uuid="1bd87ab9-f0ac-473f-a128-6fc7a543e76b"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="26"/>
+				</textElement>
+				<text><![CDATA[Бюллетень для голосования]]></text>
+			</staticText>
+		</band>
+	</title>
+	<detail>
+		<band height="168" splitType="Stretch">
+			<property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.grid.JSSGridBagLayout"/>
+			<textField>
+				<reportElement x="0" y="0" width="185" height="168" uuid="7922d44b-4899-4e82-85af-c063a4d5f475"/>
+				<box topPadding="0" leftPadding="3" bottomPadding="0" rightPadding="0">
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{candidate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="185" y="0" width="185" height="168" uuid="42952044-bc0e-4f95-ab57-f6e39d66b061"/>
+				<box>
+					<pen lineWidth="1.0" lineStyle="Solid"/>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<textElement textAlignment="Left" verticalAlignment="Middle">
+					<font fontName="Arial" size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{biography}]]></textFieldExpression>
+			</textField>
+			<frame>
+				<reportElement x="370" y="0" width="185" height="168" uuid="712e1aa9-fbe8-4cd1-8dea-2b46cb3cff93"/>
+				<box>
+					<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+				</box>
+				<rectangle>
+					<reportElement x="67" y="59" width="50" height="50" uuid="940c9f22-0840-4542-8a8c-b982fdde1585"/>
+					<graphicElement>
+						<pen lineWidth="3.0" lineStyle="Solid"/>
+					</graphicElement>
+				</rectangle>
+			</frame>
+		</band>
+	</detail>
+</jasperReport>
